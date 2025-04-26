@@ -16,7 +16,7 @@
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } rec {
-    systems = [ "aarch64-darwin" ];
+    systems = [ "aarch64-darwin" "aarch64-linux" ];
     flake.flakeModule = {
       imports = [
         inputs.actions-nix.flakeModules.default
