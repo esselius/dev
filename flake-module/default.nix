@@ -1,4 +1,4 @@
-{ inputs, lib, config, ... }:
+{ lib, config, ... }:
 
 let
   cfg = config.dev;
@@ -16,7 +16,7 @@ in
         jobs.nix-flake-check = {
           runs-on = "ubuntu-latest";
           timeout-minutes = 60;
-          steps = with inputs.actions-nix.lib.steps; [
+          steps = with cfg.actions-nix-lib.steps; [
             actionsCheckout
             DeterminateSystemsNixInstallerAction
             runNixFlakeCheck

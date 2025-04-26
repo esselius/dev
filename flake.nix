@@ -24,6 +24,8 @@
         inputs.git-hooks-nix.flakeModule
         ./flake-module
       ];
+
+      dev.actions-nix-lib = inputs.actions-nix.lib;
     };
     imports = [ flake.flakeModule ];
 
