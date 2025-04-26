@@ -33,7 +33,14 @@ in
       pre-commit.settings.hooks = {
         deadnix.enable = true;
         flake-checker.enable = true;
-        markdownlint.enable = true;
+        markdownlint = {
+          enable = true;
+          settings.configuration = {
+            MD013 = {
+              code_blocks = false;
+            };
+          };
+        };
         nixpkgs-fmt.enable = true;
         statix.enable = true;
       };
