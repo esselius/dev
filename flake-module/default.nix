@@ -28,7 +28,10 @@ in
     perSystem = { config, ... }: {
       devshells.default = {
         devshell.startup.pre-commit-install.text = config.pre-commit.installationScript;
-        packages = [ config.agenix-rekey.package ];
+        packages = [
+          config.agenix-rekey.agePackage
+          config.agenix-rekey.package
+        ];
       };
 
       pre-commit.settings.hooks = {
