@@ -2,8 +2,15 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    actions-nix.url = "github:nialov/actions.nix";
-    actions-nix.inputs.nixpkgs.follows = "nixpkgs";
+    actions-nix = {
+      url = "github:nialov/actions.nix";
+
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        pre-commit-hooks.follows = "git-hooks-nix";
+        flake-parts.follows = "flake-parts";
+      };
+    };
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -13,6 +20,16 @@
 
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
+
+    agenix-rekey = {
+      url = "github:oddlama/agenix-rekey";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        pre-commit-hooks.follows = "git-hooks-nix";
+        devshell.follows = "devshell";
+      };
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } rec {
@@ -22,10 +39,13 @@
         inputs.actions-nix.flakeModules.default
         inputs.devshell.flakeModule
         inputs.git-hooks-nix.flakeModule
+        inputs.agenix-rekey.flakeModule
         ./flake-module
       ];
 
-      dev.actions-nix-lib = inputs.actions-nix.lib;
+      dev = {
+        actions-nix-lib = inputs.actions-nix.lib;
+      };
     };
     imports = [ flake.flakeModule ];
 
