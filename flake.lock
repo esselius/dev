@@ -43,11 +43,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1742656338,
-        "narHash": "sha256-Vkg5dyXKwoAfEVlKPxbCbdTCF9sXmTySZBSL28Kcdmo=",
+        "lastModified": 1745745529,
+        "narHash": "sha256-x2hZSCPX4L9PfALJQ0bMQA13ZLZyAZhiM1gUH+HvSU4=",
         "owner": "oddlama",
         "repo": "agenix-rekey",
-        "rev": "b677dbe0d675c68a19dedbc771aff22de76b11ea",
+        "rev": "9f57da199bb2f42b6aec564f2b628b57fc018044",
         "type": "github"
       },
       "original": {

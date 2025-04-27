@@ -25,13 +25,10 @@ in
       };
     };
 
-    perSystem = { config, pkgs, ... }: {
+    perSystem = { config, ... }: {
       devshells.default = {
         devshell.startup.pre-commit-install.text = config.pre-commit.installationScript;
-        packages = [
-          pkgs.coreutils # https://github.com/oddlama/agenix-rekey/pull/98
-          config.agenix-rekey.package
-        ];
+        packages = [ config.agenix-rekey.package ];
       };
 
       pre-commit.settings.hooks = {
