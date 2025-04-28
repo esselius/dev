@@ -43,15 +43,15 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1745785644,
+        "lastModified": 1745855194,
         "narHash": "sha256-l6ZmjOBl4KOjJ+KQEjR3GQdMP9Q+NlM+13BQ/N7vkOI=",
-        "owner": "esselius",
+        "owner": "oddlama",
         "repo": "agenix-rekey",
-        "rev": "c0c40d63d21d647f79fe1de571dd09a5d0501060",
+        "rev": "7584efc530a1e3c71d20fe07ce33c0ce96ca2afe",
         "type": "github"
       },
       "original": {
-        "owner": "esselius",
+        "owner": "oddlama",
         "repo": "agenix-rekey",
         "type": "github"
       }

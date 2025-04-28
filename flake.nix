@@ -22,7 +22,7 @@
     devshell.inputs.nixpkgs.follows = "nixpkgs";
 
     agenix-rekey = {
-      url = "github:esselius/agenix-rekey";
+      url = "github:oddlama/agenix-rekey";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
