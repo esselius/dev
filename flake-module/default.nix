@@ -18,7 +18,8 @@ in
           timeout-minutes = 60;
           steps = with cfg.actions-nix-lib.steps; [
             actionsCheckout
-            DeterminateSystemsNixInstallerAction
+            { uses = "docker/setup-qemu-action@v3"; }
+            { uses = "DeterminateSystems/nix-installer-action@v17"; "with".extra-args = "--extra-conf \"extra-platforms = aarch64-linux\""; }
             runNixFlakeCheck
           ];
         };
