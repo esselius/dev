@@ -7,7 +7,7 @@
 
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        pre-commit-hooks.follows = "git-hooks-nix";
+        git-hooks.follows = "git-hooks-nix";
         flake-parts.follows = "flake-parts";
       };
     };
@@ -22,7 +22,7 @@
     devshell.inputs.nixpkgs.follows = "nixpkgs";
 
     agenix-rekey = {
-      url = "github:esselius/agenix-rekey/cp-from-coreutils";
+      url = "github:oddlama/agenix-rekey";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

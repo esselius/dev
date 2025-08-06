@@ -26,12 +26,13 @@ in
       };
     };
 
-    perSystem = { config, ... }: {
+    perSystem = { config, pkgs, ... }: {
       devshells.default = {
         devshell.startup.pre-commit-install.text = config.pre-commit.installationScript;
         packages = [
           config.agenix-rekey.agePackage
           config.agenix-rekey.package
+          pkgs.nixfmt-rfc-style
         ];
       };
 
